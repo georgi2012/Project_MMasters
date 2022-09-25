@@ -26,10 +26,10 @@ Just a project to do for fun and learn new technologies while I do so. I don't o
 ## Yea, cloning the repo is hard work to do. Here's some lazy preview: (cuz we all like pictures!)
 
 ## Sign-In/Up windows with validations
-![Menu](https://github.com/georgi2012/Project_MMasters/tree/master/git-img/army.png)
+![Menu](https://i.postimg.cc/rmPcbm93/registration.png)
 
 ## Admin panel for user editing
-![Admin](https://github.com/georgi2012/Project_MMasters/tree/master/git-img/registration.png)
+![Admin](https://github.com/georgi2012/Project_MMasters/tree/master/git-img/users-admin-panel.png)
 
 ## Creatures panel for the current user
-![Army](https://github.com/georgi2012/Project_MMasters/tree/master/git-img/users-admin-panel.png)
+![Army](https://github.com/georgi2012/Project_MMasters/tree/master/git-img/army.png)
