@@ -29,7 +29,7 @@ Just a project to do for fun and learn new technologies while I do so. I don't o
 ![Menu](https://i.postimg.cc/rmPcbm93/registration.png)
 
 ## Admin panel for user editing
-![Admin](https://github.com/georgi2012/Project_MMasters/tree/master/git-img/users-admin-panel.png)
+![Admin](https://i.postimg.cc/yNN8rwHJ/users-admin-panel.png)
 
 ## Creatures panel for the current user
-![Army](https://github.com/georgi2012/Project_MMasters/tree/master/git-img/army.png)
+![Army](https://i.postimg.cc/NM5LLZCh/army.png)
