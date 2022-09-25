@@ -1,0 +1,26 @@
+src
+--app
+    --user
+     ->user.component
+        --registr
+         -> regist.component
+        --login
+         ->login.component
+        --shared
+         ->user.service
+
+    ->app.module
+    ->app-routing.module
+
+    --home
+     ->home.component
+
+    --admin-panel
+     ->admin-panel.component
+
+    --forbidden
+     ->forbidden.component
+
+    --auth //guards
+     ->auth.guard.ts
+->index.html (path for bootstrap)

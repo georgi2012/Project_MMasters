@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand text-white">
+        Monster Masters
+    </a>
+    <button class="btn btn-light btn-lg my-2 my-sm-0"  (click)="goHome()">
+        Home
+    </button>
+    <button class="btn btn-light btn-lg my-2 my-sm-0"  (click)="goToArmy()">
+        Army
+    </button>
+    <button class="btn btn-light btn-lg my-2 my-sm-0" style="background-color: yellow;" (click)="goToUsers()" *ngIf="userRole=='Admin'">
+        Users
+    </button>
+    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">
+        Logout
+    </button>
+  </nav>
+
+  <div>
+    <router-outlet (logoutFun)="onLogout()"></router-outlet>
+  </div>

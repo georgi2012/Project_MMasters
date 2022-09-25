@@ -1,0 +1,48 @@
+<div class="flex-box">
+    <div class="flex-item" *ngFor="let user of users">
+        <div class="grid-container">
+            <div *ngIf="!isInEditMode(user.id)">
+                <div class="grid-item">
+                    <strong>ID:</strong> {{user.id}}
+                </div>
+                <div class="grid-item">
+                    <strong>Username:<br></strong>{{user.userName}}
+                </div>
+                <div class="grid-item"> <strong>Email:<br></strong>{{user.email}}</div>
+                <div class="inside-grid">
+                    <button class="grid-item edits-button" (click)="onEdit(user.id)">
+                        <img src="/assets/image/edit.png" class="edits-img">
+                    </button>
+                    <button class="grid-item edits-button" (click)="onDelete(user.id)">
+                        <img src="/assets/image/delete.png" class="edits-img">
+                    </button>
+                </div>
+            </div>
+            <form #form='ngForm' (submit)="onSubmit(form,user.id)" *ngIf="isInEditMode(user.id)">
+                <div class="grid-item">
+                    <label><strong>ID:</strong> (constant)</label>
+                    <input #UserName="ngModel" name="ID" [(ngModel)]="userFormModel.ID" type="text"
+                        placeholder="{{user.id}}"  readonly class="grid-input">
+                </div>
+                <div class="grid-item">
+                    <label>Username</label>
+                    <input #UserName="ngModel" name="UserName" [(ngModel)]="userFormModel.UserName" required type="text"
+                        placeholder="{{user.userName}}" class="grid-input">
+                </div>
+                <div class="grid-item">
+                    <label>Email</label>
+                    <input type="email" #UserName="ngModel" name="Email" [(ngModel)]="userFormModel.Email"
+                        placeholder="{{user.email}}" required class="grid-input">
+                </div>
+                <div class="inside-grid">
+                    <button class="grid-item edits-button" type="submit" [disabled]="form.invalid">
+                        <img src="/assets/image/tick.png" class="edits-img">
+                    </button>
+                    <button class="grid-item edits-button" (click)="onEditModeExit(user.id)">
+                        <img src="/assets/image/x.png" class="edits-img">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

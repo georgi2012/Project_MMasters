@@ -1,0 +1,53 @@
+<div class="m-5" style="width:18rem" *ngIf="monsters">
+    <div class="flex-box">
+        <div class="flex-item" *ngFor="let monster of monsters">
+            <div class="grid-container">
+                <div class="grid-monst-name grid-item">
+                    <!--list-group  list-group-item-->
+                    <strong>{{monster.name}}</strong>
+                </div>
+                <div class="grid-item descrp">
+                    <strong>Description:<br></strong>{{monster.description}}
+                </div>
+                <div class="grid-item" style='background-color:{{getColor(monster.rarity)}};'>
+                    <strong>Rarity:</strong>{{monster.rarity}}
+                </div>
+                <div class="grid-item">
+                    <!-- <strong>Attack Type:<br></strong> -->
+                    <img class="grid-img" src="/assets/image/{{getAttackTypePic(monster.attackType)}}">
+                    {{monster.attackType}}
+                </div>
+                <div class="inside-grid grid-item">
+                    <div class="grid-item">
+                        <img class="grid-img" src="/assets/image/punch.png"> {{monster.attack}}
+                    </div>
+                    <div class="grid-item">
+                        <img class="grid-img" src="/assets/image/heart.png"> {{monster.health}}
+                    </div>
+                    <div class="grid-item">
+                        <img class="grid-img" src="/assets/image/shield.png"> {{monster.defense}}
+                    </div>
+                    <div class="grid-item">
+                        <img class="grid-img" src="/assets/image/run.png">{{monster.speed}}
+                    </div>
+                </div>
+            </div>
+            <!-- <li class="list-group-item">
+            <strong>Email:</strong>{{monster.email}}
+        </li>
+        <li class="list-group-item">
+            <strong>Email:</strong>{{monster.email}}
+        </li> -->
+        </div>
+    </div>
+</div>
+<!-- 
+"name": "Orc Slasher",
+        "description": "The Orc Slasher is fierce warrior that will deal solid damage to any threat on his way.",
+        "attackType": "Melee",
+        "rarity": "Common",
+        "health": 35,
+        "defense": 5,
+        "attack": 25,
+        "range": 1,
+        "speed": 2 -->
