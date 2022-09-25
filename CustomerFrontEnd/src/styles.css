@@ -1,13 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-color: #04c582;;
+    /* background-color: #04c582;; */
+    background-image: url('/assets/image/background-cave.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 input.form-control,input.form-control:focus{
     background-color: #636b7b;
     color: #fff;
     border: 1px solid #636b7b;
-
 }
 
 input.form-control:focus{
@@ -15,6 +18,7 @@ input.form-control:focus{
 }
 
 button[type=submit].btn{
+    margin-top: 20px;
     border-radius: 20px;
     background-color: #04c582;
     color: #fff;
@@ -47,7 +51,11 @@ div.form-group.required>label:first-child:after{
   .wrapped-div {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #2e3137;
+    /* background: #2e3137; */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg,
+     rgba(2,0,36,1) 0%, rgba(3,3,128,1) 
+     22%, rgba(0,168,255,1) 47%, rgba(2,86,178,1) 65%);
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -82,6 +90,10 @@ div.form-group.required>label:first-child:after{
       outline: none;
   }
 
+  .btn-correct{
+    margin: 20px;
+  }
+
   .form{
       margin: 0px 16px;
   }
@@ -102,12 +114,13 @@ div.form-group.required>label:first-child:after{
 .flex-box{
     display: flex;
     /* flex-flow:column wrap; */
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     flex-direction: row;
     row-gap: 10px; 
     margin: 2px; 
     /* background-color: #fff; */
-    justify-content: start;
+    justify-content: center;
+    /* align-items: baseline; */
     /* align-content:center; */
 }
 
@@ -126,7 +139,8 @@ div.form-group.required>label:first-child:after{
     display: grid;
     /* grid-template-rows: auto  auto auto auto auto; */
     padding: 10px;
-    width: 200px;
+    /* width: 200px; */
+    width: fit-content;
   }
   .grid-item {
     background-color: rgba(255, 255, 255, 0.8);

@@ -1,7 +1,7 @@
-<div class="m-5" style="width:18rem" *ngIf="monsters">
+<div  *ngIf="monsters">
     <div class="flex-box">
         <div class="flex-item" *ngFor="let monster of monsters">
-            <div class="grid-container">
+            <div class="grid-container" style="width:200px">
                 <div class="grid-monst-name grid-item">
                     <!--list-group  list-group-item-->
                     <strong>{{monster.name}}</strong>

@@ -17,16 +17,4 @@ export class HomeComponent implements OnInit {
    
   }
 
-  // onLogout() {
-  //   localStorage.removeItem('token');
-  //   this.router.navigate(['/user/login']);
-  // }
-
-  // goHome(){
-  //   this.router.navigate(['/home']);
-  // }
-
-  // goToArmy(){
-  //   this.router.navigate(['/home/army']);
-  // }
 }

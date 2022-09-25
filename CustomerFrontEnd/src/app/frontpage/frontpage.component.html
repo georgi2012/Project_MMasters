@@ -1,17 +1,17 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand text-white">
+    <a class="navbar-brand text-white btn-correct">
         Monster Masters
     </a>
-    <button class="btn btn-light btn-lg my-2 my-sm-0"  (click)="goHome()">
+    <button class="btn btn-correct btn-light btn-lg my-2 my-sm-0"  (click)="goHome()">
         Home
     </button>
-    <button class="btn btn-light btn-lg my-2 my-sm-0"  (click)="goToArmy()">
+    <button class="btn btn-correct btn-light btn-lg my-2 my-sm-0"  (click)="goToArmy()">
         Army
     </button>
-    <button class="btn btn-light btn-lg my-2 my-sm-0" style="background-color: yellow;" (click)="goToUsers()" *ngIf="userRole=='Admin'">
+    <button class="btn btn-correct btn-light btn-lg my-2 my-sm-0" style="background-color: yellow;" (click)="goToUsers()" *ngIf="userRole=='Admin'">
         Users
     </button>
-    <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">
+    <button class="btn  btn-correct btn-danger my-2 my-sm-0" (click)="onLogout()">
         Logout
     </button>
   </nav>
