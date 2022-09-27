@@ -18,6 +18,7 @@ export class FrontpageComponent implements OnInit {
 
   ngOnInit(): void {
     this.userRole = JSON.parse(window.atob(localStorage.getItem('token')?.split('.')[1]!)).role;
+    this.router.navigate(['page/home']);
     // this.service.getUserProfile().subscribe(
     //   (res: any) => {
     //     this.userDetails=res;
@@ -46,5 +47,8 @@ export class FrontpageComponent implements OnInit {
     this.router.navigate(['/page/users']);
   }
 
+  goToStore(){
+    this.router.navigate(['/page/store']);
+  }
 
 }

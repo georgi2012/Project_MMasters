@@ -5,6 +5,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { ArmyComponent } from './frontpage/army/army.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { HomeComponent } from './frontpage/home/home.component';
+import { StoreComponent } from './frontpage/store/store.component';
 import { UsersComponent } from './frontpage/users/users.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
@@ -21,6 +22,7 @@ children:[
   children:[
 {path:'home',component:HomeComponent,canActivate:[AuthGuard]},
 {path:'army',component:ArmyComponent,canActivate:[AuthGuard]},
+{path:'store',component:StoreComponent,canActivate:[AuthGuard]},
 {path:'users',component:UsersComponent,canActivate:[AuthGuard],data:{permittedRoles:['Admin']}}
   ]},
 {path:'forbidden',component:ForbiddenComponent}

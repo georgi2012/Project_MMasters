@@ -19,6 +19,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ArmyComponent } from './frontpage/army/army.component';
 import { UsersComponent } from './frontpage/users/users.component';
+import { StoreComponent } from './frontpage/store/store.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UsersComponent } from './frontpage/users/users.component';
     ForbiddenComponent,
     FrontpageComponent,
     ArmyComponent,
-    UsersComponent
+    UsersComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

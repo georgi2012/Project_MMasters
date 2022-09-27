@@ -161,6 +161,12 @@ div.form-group.required>label:first-child:after{
     width: 25px;
   }
 
+  .orb-img{
+    height: 200px;
+    width: 200px;
+    background-color: black;
+  }
+
   .grid-monst-name{
     text-align: center;
     border: 1px solid rgba(0,0,0,0);
@@ -191,3 +197,22 @@ div.form-group.required>label:first-child:after{
  .grid-input{
     width: 150px;
  }
+
+ .rounded{
+    border-radius: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+ }
+
+ .orb-price{
+    background-color: black;
+    color: white;
+ }
+
+ .orb-btn{
+
+ }
+
+ .orb-btn:hover{
+    
+}

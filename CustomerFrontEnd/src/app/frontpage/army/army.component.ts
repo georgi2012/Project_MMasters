@@ -14,47 +14,46 @@ import { UserService } from 'src/app/shared/user-services/user.service';
 export class ArmyComponent implements OnInit {
 
   monsters: MonsterReceiveModel[] = [];
-  @Output("logoutFun") logoutFun: EventEmitter<any> = new EventEmitter();
 
-  constructor(private monstService: MonsterService,private toastr:ToastrService,private service:UserService) { }
+  constructor(private monstService: MonsterService, private toastr: ToastrService, private service: UserService) { }
 
   ngOnInit(): void {
     let temp: MonsterReceiveModel[] = [];
     this.monstService.getMonsters().subscribe(
       (res: any) => {
+        temp = res;
+        temp = temp.sort(this.sortMonster);
         this.monsters = res;
-        //console.log("Result:" + this.monsters[0]);
       },
       (err: any) => {
         console.log(err);
-        this.toastr.error("Error occured",'Please, sign in again!');
+        this.toastr.error("Error occured", 'Please, sign in again!');
         this.service.logout();
       }
     );
-    //this.monsters=temp.sort(this.sortMonster);
   }
 
-  getValueByRarity(x: string) {
-    switch (x) {
-      case "Common":
-        return 0;
-      case "Uncommon":
-        return 1;
-      case "Rare":
-        return 2;
-      case "Legendary":
-        return 3;
-      default: return -1;
-    }
-  }
 
   sortMonster(x: MonsterReceiveModel, y: MonsterReceiveModel) {
-    let valX = this.getValueByRarity(x.rarity);
-    let valY = this.getValueByRarity(y.rarity);
-    if (valX < valY) {
+    let getValueByRarity = function (x:string){
+      switch (x) {
+        case "Common":
+          return 0;
+        case "Uncommon":
+          return 1;
+        case "Rare":
+          return 2;
+        case "Legendary":
+          return 3;
+        default: return -1;
+      };
+    };
+    const valX = getValueByRarity(x.rarity);
+    const valY = getValueByRarity(y.rarity);
+    if (valX > valY) {
       return -1;
     }
-    if (valX > valY) {
+    if (valX < valY) {
       return 1;
     }
     return 0;

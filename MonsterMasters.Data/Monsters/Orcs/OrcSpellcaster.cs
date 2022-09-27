@@ -18,7 +18,7 @@ namespace MonsterMasters.Data.Monsters.Orcs
         public OrcSpellcaster()
         {
             Name = "Orc Spellcaster";
-            Description = "The Orc Spellcaster is a middle-ranged mage that controls the mystic arts or nature's energy.";
+            Description = "The Orc Spellcaster is a middle-ranged mage that controls the mystic arts of nature's energy.";
             AttackType = AttackType.Mage;
             Rarity = DropRate.Uncommon;
             Health = 25;
