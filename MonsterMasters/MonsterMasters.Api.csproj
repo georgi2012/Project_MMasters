@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MonsterMasters.Core\MonsterMasters.Core.csproj" />
     <ProjectReference Include="..\MonsterMasters.Data\MonsterMasters.Data.csproj" />
   </ItemGroup>

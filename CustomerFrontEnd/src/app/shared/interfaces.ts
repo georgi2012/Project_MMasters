@@ -15,3 +15,10 @@ export interface UserInfoModel{
     userName:string,
     email:string
 }
+
+export interface Orbs{
+    name:string,
+    price:number,
+    pictureUrl:string,
+    description:string
+}
