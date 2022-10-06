@@ -1,29 +1,27 @@
 ﻿using MonsterMasters.Data.Contracts.Monsters;
+using MonsterMasters.Data.Contracts.Orbs;
 
 namespace MonsterMasters.Api.DTOModels
 {
     public class OrbDTO
     {
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public string Description { get; set; }
 
-        public static OrbDTO MakeDTO( creature)
+        public static OrbDTO MakeDTO(Orb orb)
         {
-            return new CreatureDTO
+            return new OrbDTO
             {
-                Name = creature.Name,
-                Description = creature.Description,
-                AttackType = creature.AttackType.ToString(),
-                Rarity = creature.Rarity.ToString(),
-                Health = creature.Health,
-                Defense = creature.Defense,
-                Attack = creature.Attack,
-                Range = creature.Range,
-                Speed = creature.Speed
+                Name = orb.Name,
+                Description = orb.Description,
+                Price = orb.Price
             };
         }
-        public static List<OrbDTO> MakeFromList(List<Creature> creatures)
+        public static List<OrbDTO> MakeFromList(List<Orb> orbs)
         {
-            List<CreatureDTO> dtos = new();
-            foreach (var item in creatures)
+            List<OrbDTO> dtos = new();
+            foreach (var item in orbs)
             {
                 dtos.Add(MakeDTO(item));
             }

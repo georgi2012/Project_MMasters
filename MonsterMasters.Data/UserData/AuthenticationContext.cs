@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MonsterMasters.Data.Contracts.Monsters;
+using MonsterMasters.Data.Contracts.Orbs;
+using MonsterMasters.Data.Orbs;
 
 namespace RegisterAndLoginApp.Api.Models
 {
@@ -9,7 +11,7 @@ namespace RegisterAndLoginApp.Api.Models
     {
         public AuthenticationContext()
         {
-            
+
         }
 
         public AuthenticationContext(DbContextOptions<AuthenticationContext> options)
@@ -21,6 +23,9 @@ namespace RegisterAndLoginApp.Api.Models
         public virtual DbSet<AppUser> AppUsers { get; set; }
 
         public virtual DbSet<Creature> Creatures { get; set; }
+
+        public virtual DbSet<Orb> Orb { get; set; }
+        public virtual DbSet<RateValue> Rates { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -42,11 +47,25 @@ namespace RegisterAndLoginApp.Api.Models
             modelBuilder.Entity<Creature>().Property<int>("Index");
             modelBuilder.Entity<Creature>().HasKey("Index");
             modelBuilder.Entity<Creature>()
-                .HasOne(x=>x.appUser).WithMany(x=>x.Creatures);
+                .HasOne(x => x.appUser).WithMany(x => x.Creatures);
+
+            modelBuilder.Entity<RateValue>().Property<int>("Index");
+            modelBuilder.Entity<RateValue>().HasKey("Index");
+
+            modelBuilder.Entity<Orb>().Property<int>("Index");
+            modelBuilder.Entity<Orb>().HasKey("Index");
+            modelBuilder.Entity<Orb>()
+                 .HasMany(x => x.Rates).WithOne(x => x.Orb);
 
             modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole[] {
             new IdentityRole { Name = "Admin", NormalizedName = "Admin".ToUpper() },
             new IdentityRole { Name = "Customer", NormalizedName = "Customer".ToUpper() }});
+
+
+            //modelBuilder.Entity<Orb>().HasData(new Orb[] {
+            //new BasicOrb (),
+            //new RareOrb(),
+            //new LuckyOrb() });
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

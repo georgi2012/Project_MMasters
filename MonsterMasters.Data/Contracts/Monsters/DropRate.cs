@@ -8,7 +8,7 @@ namespace MonsterMasters.Data.Contracts.Monsters
 {
     public enum DropRate
     {
-        Common,
+        Common=0,
         Uncommon,
         Rare,
         Legendary

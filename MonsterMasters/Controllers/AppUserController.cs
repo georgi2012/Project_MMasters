@@ -40,7 +40,6 @@ namespace RegisterAndLoginApp.Api.Controllers
             {
                 UserName = model.UserName,
                 Email = model.Email
-                //FullName = model.FullName
             };
 
             try

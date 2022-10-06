@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RegisterAndLoginApp.Api.Models;
 
@@ -11,9 +12,10 @@ using RegisterAndLoginApp.Api.Models;
 namespace MonsterMasters.Data.Migrations
 {
     [DbContext(typeof(AuthenticationContext))]
-    partial class AuthenticationContextModelSnapshot : ModelSnapshot
+    [Migration("20221006062508_orbs-add")]
+    partial class orbsadd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,15 +53,15 @@ namespace MonsterMasters.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "4ca06a6d-8e8d-45ef-b56c-a38c5e2e61e5",
-                            ConcurrencyStamp = "759ca4ab-d28b-4330-96d3-8cd8eae2bdd5",
+                            Id = "920f9471-7a31-4e9e-8c01-d65e83ffad5f",
+                            ConcurrencyStamp = "d528e18c-e237-4fb8-ae90-9aa9899a32d1",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "428cff6e-a9cc-445d-998c-53088e65607b",
-                            ConcurrencyStamp = "ecf5a76a-0e5c-4214-8638-b1f94db54436",
+                            Id = "3f5706e0-97bb-4df8-8e12-5d3ef706d599",
+                            ConcurrencyStamp = "e85abd41-dfc8-4a4c-b00c-1dc5c92e7bca",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -310,37 +312,9 @@ namespace MonsterMasters.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
                     b.HasKey("Index");
 
                     b.ToTable("Orb");
-                });
-
-            modelBuilder.Entity("MonsterMasters.Data.Contracts.Orbs.RateValue", b =>
-                {
-                    b.Property<int>("Index")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Index"), 1L, 1);
-
-                    b.Property<int>("OrbIndex")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rate")
-                        .HasColumnType("int");
-
-                    b.HasKey("Index");
-
-                    b.HasIndex("OrbIndex");
-
-                    b.ToTable("Rates");
                 });
 
             modelBuilder.Entity("RegisterAndLoginApp.Api.Models.AppUser", b =>
@@ -410,22 +384,6 @@ namespace MonsterMasters.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("appUser");
-                });
-
-            modelBuilder.Entity("MonsterMasters.Data.Contracts.Orbs.RateValue", b =>
-                {
-                    b.HasOne("MonsterMasters.Data.Contracts.Orbs.Orb", "Orb")
-                        .WithMany("Rates")
-                        .HasForeignKey("OrbIndex")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Orb");
-                });
-
-            modelBuilder.Entity("MonsterMasters.Data.Contracts.Orbs.Orb", b =>
-                {
-                    b.Navigation("Rates");
                 });
 
             modelBuilder.Entity("RegisterAndLoginApp.Api.Models.AppUser", b =>

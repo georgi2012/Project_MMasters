@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MonsterMasters.Data.Contracts.Orbs;
+using MonsterMasters.Data.Orbs;
 using RegisterAndLoginApp.Api.Models;
 using System.Text;
 
@@ -33,6 +35,20 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Password.RequireUppercase = false;
     opt.Password.RequiredLength = 4;
 });
+
+//builder.Services.Configure<AuthenticationContext>(opt =>
+//{
+//    if(opt.Orb.ToList().Count == 0)
+//    {
+//        opt.Orb.AddRangeAsync(new Orb[]
+//        {
+//            new BasicOrb(),
+//            new RareOrb(),
+//            new LuckyOrb()
+//        });
+//    }
+//});
+
 
 builder.Services.AddCors();
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonsterMasters.Data.Contracts.Monsters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace MonsterMasters.Data.Contracts.Orbs
 {
-    internal interface IOrb
+    public interface IOrb
     {
-        string Name { get; }
-        int Price { get; }
-        // Dictionary<string, double> Rates { get; }
-        double[] Rates { get; }
+        string Name { get; set; }
+        int Price { get; set; }
+        List<RateValue> Rates { get; set; }
+        string Description { get; set; }
+
     }
 }
