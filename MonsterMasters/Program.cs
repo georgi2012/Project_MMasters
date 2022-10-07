@@ -2,7 +2,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MonsterMasters.Core.Orbs;
+using MonsterMasters.Data.Contracts;
 using MonsterMasters.Data.Contracts.Orbs;
+using MonsterMasters.Data.Monsters;
 using MonsterMasters.Data.Orbs;
 using RegisterAndLoginApp.Api.Models;
 using System.Text;
@@ -25,6 +28,8 @@ builder.Services.AddDefaultIdentity<AppUser>()
     .AddEntityFrameworkStores<AuthenticationContext>();
 
 builder.Services.AddScoped<AuthenticationContext>();
+builder.Services.AddScoped<IMonsterFactory,MonsterFactory>();
+builder.Services.AddScoped<IOrbOpener, OrbOpener>();
 //inject configuration
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 

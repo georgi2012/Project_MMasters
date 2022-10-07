@@ -13,6 +13,7 @@ import { UserService } from 'src/app/shared/user-services/user.service';
 export class StoreComponent implements OnInit {
 
   orbsArr:Orbs[]=[];
+  descriptionPopShow:boolean = false;
 
   constructor(private toastr: ToastrService, private service: UserService,private orbsService:OrbsService) { }
 
@@ -39,6 +40,10 @@ export class StoreComponent implements OnInit {
         return "legendary-orb.png";
       default: ;
     }
+  }
+
+  descriptionPopOn(){
+    this.descriptionPopShow = !this.descriptionPopShow;
   }
 
 }

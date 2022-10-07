@@ -20,6 +20,7 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ArmyComponent } from './frontpage/army/army.component';
 import { UsersComponent } from './frontpage/users/users.component';
 import { StoreComponent } from './frontpage/store/store.component';
+import { DescriptionPopupComponent } from './frontpage/store/orb/description-popup/description-popup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StoreComponent } from './frontpage/store/store.component';
     FrontpageComponent,
     ArmyComponent,
     UsersComponent,
-    StoreComponent
+    StoreComponent,
+    DescriptionPopupComponent
   ],
   imports: [
     BrowserModule,
