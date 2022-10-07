@@ -110,23 +110,15 @@ div.form-group.required>label:first-child:after{
     width: 100px;
 }
 
-.popup-orbs{
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-  position: relative;
-  z-index: 2;
-}
 
 .descr-popup{
   background-color: white;
-  width: 100px;
-  height: 200px;
-  position:relative;
-  top: 50%;
-  left: 50%;
+  position: fixed;
+display: block;
+width:200px;
+height: 400px;
+top: 25%; 
+left:50%;
 }
 
 .flex-box{
@@ -184,11 +176,17 @@ div.form-group.required>label:first-child:after{
     width: 200px;
     background-color: black;
   }
+  .descr-orb{
+    color:white;
+    font-size: 15px;
+    white-space: pre;
+  }
 
   .grid-monst-name{
     text-align: center;
     border: 1px solid rgba(0,0,0,0);
     font-size: 20px;
+    text-overflow:ellipsis;
   }
 
   .descrp{
@@ -234,3 +232,5 @@ div.form-group.required>label:first-child:after{
  .orb-btn:hover{
     
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -4,12 +4,14 @@
         <div class="grid-item">
             <strong>{{orb.name}}</strong>
         </div>
-        <img class="orb-img" src="/assets/image/{{getOrbImg(orb.name)}}">
+        <img class="orb-img" src="/assets/image/{{getOrbImg(orb.name)}}" *ngIf="!descriptionPopShow">
+        <div class="orb-img descr-orb" *ngIf="descriptionPopShow">
+            {{orb.description}}
+        </div>
         <div class="grid-item orb-price">
             <strong>Price: {{orb.price}}  </strong><img src="/assets/image/coin.png" style="width:25px;height:25px;">
         </div>
         <button class="grid-item rounded">Purchase</button>
         <button class="grid-item rounded" (click)="descriptionPopOn()">Drop rates</button>
     </div>
-    <app-description-popup *ngIf="descriptionPopShow" class="popup-orbs"></app-description-popup>
 </div>

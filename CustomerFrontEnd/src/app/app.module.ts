@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http"
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { MatDialogModule } from '@angular/material/dialog';//popups
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './frontpage/home/home.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
@@ -43,6 +44,7 @@ import { DescriptionPopupComponent } from './frontpage/store/orb/description-pop
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     ToastrModule.forRoot({
       progressBar:true
     }),
