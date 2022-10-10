@@ -55,7 +55,7 @@ namespace RegisterAndLoginApp.Api.Controllers
         [HttpDelete]
         [Authorize(Roles = "Admin")]
         [Route("RemoveUser")]
-        public async Task<IActionResult> RemoveUser([FromBody]string ID)
+        public async Task<IActionResult> RemoveUser([FromBody] string ID)
         {
             var user = await _userManager.FindByIdAsync(ID);
             if (user == null)
@@ -68,10 +68,10 @@ namespace RegisterAndLoginApp.Api.Controllers
             var res = await _userManager.DeleteAsync(user);
             if (!res.Succeeded)
             {
-                string errors="";
-                foreach(var error in res.Errors)
+                string errors = "";
+                foreach (var error in res.Errors)
                 {
-                    errors += error.Description+";";
+                    errors += error.Description + ";";
                 }
                 return BadRequest(new
                 {
@@ -131,5 +131,23 @@ namespace RegisterAndLoginApp.Api.Controllers
             var userCreatures = _dbContext.Creatures.ToList().FindAll(x => x.userId == userId);
             return CreatureDTO.MakeFromList(userCreatures);
         }
+
+        [HttpGet]
+        [Authorize]
+        [Route("Money")]
+        public async Task<ActionResult<uint>> GetMoney()
+        {
+            string userId = User.Claims.FirstOrDefault(c => c.Type == "UserID").Value;
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return BadRequest(new
+                {
+                    message = "Invalid user token."
+                });
+            }
+            return Ok(user.Money);
+        }
+
     }
 }

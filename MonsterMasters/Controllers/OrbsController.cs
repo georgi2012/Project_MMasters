@@ -48,7 +48,7 @@ namespace MonsterMasters.Api.Controllers
                     message = "Invalid user token."
                 });
             }
-            if (true)//check user money
+            if(true)//check user money
             {
                 //remove money
 

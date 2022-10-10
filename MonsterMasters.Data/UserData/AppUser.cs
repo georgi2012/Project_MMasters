@@ -7,5 +7,6 @@ namespace RegisterAndLoginApp.Api.Models
     public class AppUser: IdentityUser
     {
         public List<Creature> Creatures { get; set; }
+        public uint Money { get; set; }
     }
 }

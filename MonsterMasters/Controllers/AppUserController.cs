@@ -39,7 +39,8 @@ namespace RegisterAndLoginApp.Api.Controllers
             var appUser = new AppUser()
             {
                 UserName = model.UserName,
-                Email = model.Email
+                Email = model.Email,
+                Money = 0
             };
 
             try
