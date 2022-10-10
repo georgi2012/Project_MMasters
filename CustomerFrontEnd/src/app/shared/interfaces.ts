@@ -19,6 +19,5 @@ export interface UserInfoModel{
 export interface Orbs{
     name:string,
     price:number,
-    pictureUrl:string,
     description:string
 }
