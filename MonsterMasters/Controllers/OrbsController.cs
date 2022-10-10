@@ -35,20 +35,20 @@ namespace MonsterMasters.Api.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         [Route("BuyOrb")]
         public async Task<ActionResult<CreatureDTO>> BuyOrb(OrbDTO orbDTO)
         {
-            //string userId = User.Claims.FirstOrDefault(c => c.Type == "UserID").Value;
-            //var user = await _userManager.FindByIdAsync(userId);
-            //if (user == null)
-            //{
-            //    return BadRequest(new
-            //    {
-            //        message = "Invalid user token."
-            //    });
-            //}
-            if(true)//check user money
+            string userId = User.Claims.FirstOrDefault(c => c.Type == "UserID").Value;
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return BadRequest(new
+                {
+                    message = "Invalid user token."
+                });
+            }
+            if (true)//check user money
             {
                 //remove money
 
